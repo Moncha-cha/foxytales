@@ -1,0 +1,1 @@
+console.log("FoxyTales pripraven k akci!")
