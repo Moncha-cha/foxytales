@@ -1,17 +1,45 @@
+/* 1. NAČTENÍ TAILWINDU */
 @import "tailwindcss";
 
-/* Tato sekce definuje globální vzhled celé aplikace. 
-   Díky @layer base se tyto styly "vstříknou" přímo do základních HTML značek.
-*/
+/* 2. ZÁKLADY (HTML a BODY) */
 @layer base {
-  body {
-    /* Používáme barvu ze Slate palety (velmi tmavě modrá), která je 
-       standardem pro moderní "dark mode" a šetří oči dětí. */
-    @apply bg-slate-950 text-slate-200 antialiased;
+  html {
+    /* Plynulé skrolování stránky */
+    scroll-behavior: smooth;
   }
 
-  /* Optimalizace pro plynulé skrolování - drobnost, která odděluje profi appky */
-  html {
-    scroll-behavior: smooth;
+  body {
+    /* Tmavé pozadí a světlé písmo pro celou aplikaci */
+    @apply bg-slate-950 text-slate-200 antialiased;
+  }
+}
+
+/* 3. NAŠE VLASTNÍ KOMPONENTY */
+@layer components {
+  /* Hlavní obal aplikace (ten rámeček uprostřed) */
+  .app-wrapper {
+    @apply max-w-2xl mx-auto bg-slate-900/50 p-6 rounded-2xl border border-slate-800 shadow-2xl mt-8;
+  }
+
+  /* Obal pro každé vstupní políčko s popiskem */
+  .form-field {
+    @apply flex flex-col gap-2 mb-6;
+  }
+
+  /* Popisek nad políčkem (Label) */
+  .form-field label {
+    @apply text-sm font-bold uppercase tracking-widest text-orange-400/80;
+  }
+
+  /* Samotná políčka pro psaní a výběr */
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    @apply bg-slate-800 border-2 border-slate-700 rounded-xl p-3 focus:border-orange-500 focus:outline-none transition-colors text-white;
+  }
+
+  /* Hlavní tlačítko - všimni si použití tvé barvy 'bg-foxy-orange' */
+  .submit-button {
+    @apply w-full bg-[#ea580c] hover:bg-orange-500 text-white font-black py-4 rounded-xl uppercase tracking-widest transition-all transform active:scale-95;
   }
 }
