@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tato sekce definuje globální vzhled celé aplikace. 
+   Díky @layer base se tyto styly "vstříknou" přímo do základních HTML značek.
+*/
+@layer base {
+  body {
+    /* Používáme barvu ze Slate palety (velmi tmavě modrá), která je 
+       standardem pro moderní "dark mode" a šetří oči dětí. */
+    @apply bg-slate-950 text-slate-200 antialiased;
+  }
+
+  /* Optimalizace pro plynulé skrolování - drobnost, která odděluje profi appky */
+  html {
+    scroll-behavior: smooth;
+  }
+}
