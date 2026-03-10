@@ -1,1 +1,1 @@
-console.log("FoxyTales pripraven k akci!")
+import "./style.css";

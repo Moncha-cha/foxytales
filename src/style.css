@@ -1,10 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Tato sekce definuje globální vzhled celé aplikace. 
    Díky @layer base se tyto styly "vstříknou" přímo do základních HTML značek.

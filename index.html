@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,88 @@
     <title>FoxyTales - Inteligentní příběhy</title>
   </head>
   <body>
-    <div id="app">
-      <h1>FoxyTales startuje... 🦊</h1>
+    <div id="app" class="app-wrapper">
+      <header class="app-header">
+        <h1>FoxyTales 🦊</h1>
+        <p>Generátor příběhů napsaných pro tebe a o tobě nebo tvém hrdinovi</p>
+      </header>
+
+      <section class="story-form">
+        <div class="form-field">
+          <label for="hero-name">Jméno hlavního hrdiny bude...</label>
+          <input type="text" id="hero-name" placeholder="Např. Adélka" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="hero-age">Věk</label>
+            <input
+              type="number"
+              id="hero-age"
+              min="0"
+              max="150"
+              placeholder="Pokud chceš, napiš číslo"
+            />
+          </div>
+          <div class="form-field">
+            <label for="hero-gender">Hrdina je</label>
+            <select id="hero-gender">
+              <option value="">Vyber...</option>
+              <option value="holka">Holka</option>
+              <option value="kluk">Kluk</option>
+              <option value="jine">Jiné / nechci uvádět</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="hero-interests">Zájmy a zajímavosti o hrdinovi</label>
+          <textarea
+            id="hero-interests"
+            placeholder="Co má hrdina rád? (např. dinosauři, tanec, květiny, Naruto...)"
+          ></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="story-world">Svět příběhu</label>
+          <input
+            type="text"
+            id="story-world"
+            placeholder="Např. Bradavice, Astronomická věž, Zeměplocha, Zootropolis..."
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="story-style">Styl autora, díla nebo atmosféra</label>
+          <input
+            type="text"
+            id="story-style"
+            placeholder="Např. J.K. Rowling, Harry Potter a Princ dvojí krve nebo Marvel a Ironman"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="story-length">Jak dlouhé kouzlo si přeješ?</label>
+          <select id="story-length">
+            <option value="short">Krátký příběh pro zpestření okamžiku</option>
+            <option value="long">Plnohodnotný příběh se zápletkou</option>
+          </select>
+        </div>
+
+        <div class="form-field safety-field">
+          <label for="safety-limits"
+            >Bezpečný přístav: Čemu se máme vyhnout?</label
+          >
+          <textarea
+            id="safety-limits"
+            placeholder="Např. pavouci, tma, loučení, létání, válka..."
+          ></textarea>
+        </div>
+
+        <button id="generate-btn" class="submit-button">
+          Vyčarovat příběh
+        </button>
+      </section>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
