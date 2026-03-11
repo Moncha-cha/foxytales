@@ -21,6 +21,24 @@
     @apply max-w-2xl mx-auto bg-slate-900/50 p-6 rounded-2xl border border-slate-800 shadow-2xl mt-8;
   }
 
+  /* --- HLAVIČKA A LOGO --- */
+  .app-header {
+    @apply flex flex-col items-center text-center mb-10;
+  }
+
+  .app-logo {
+    /* w-32 a h-32 určují velikost (128x128px), rounded-full z toho udělá dokonalý kruh */
+    @apply w-32 h-32 rounded-full object-cover mb-4 border-2 border-slate-700 shadow-[0_0_20px_rgba(0,0,0,0.5)];
+  }
+
+  .app-header h1 {
+    @apply text-4xl font-black tracking-tighter text-orange-500 mb-2 uppercase;
+  }
+
+  .app-header p {
+    @apply text-slate-400 font-medium;
+  }
+
   /* Obal pro každé vstupní políčko s popiskem */
   .form-field {
     @apply flex flex-col gap-2 mb-6;
@@ -41,5 +59,42 @@
   /* Hlavní tlačítko - všimni si použití tvé barvy 'bg-foxy-orange' */
   .submit-button {
     @apply w-full bg-[#ea580c] hover:bg-orange-500 text-white font-black py-4 rounded-xl uppercase tracking-widest transition-all transform active:scale-95;
+  }
+
+  /* --- PATIČKA --- */
+  .app-footer {
+    @apply mt-16 pt-8 border-t border-slate-800 text-center text-slate-400;
+  }
+
+  .footer-credit {
+    @apply mb-6;
+  }
+
+  .footer-credit span {
+    @apply text-orange-500 font-bold uppercase tracking-widest;
+  }
+
+  .footer-nav {
+    @apply flex flex-wrap justify-center gap-4 md:gap-8 mb-6 text-sm font-medium;
+  }
+
+  .footer-nav a {
+    @apply hover:text-orange-400 transition-colors;
+  }
+
+  .footer-social {
+    @apply flex justify-center items-center gap-4 text-sm mb-4;
+  }
+
+  .footer-social a {
+    @apply hover:text-white transition-colors;
+  }
+
+  .footer-social .divider {
+    @apply text-slate-700;
+  }
+
+  .footer-disclaimer {
+    @apply text-xs text-slate-600 max-w-md mx-auto mt-8;
   }
 }
